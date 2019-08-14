@@ -171,5 +171,5 @@ io.on("connection", socket => {
 app.use(history());
 /* UNCOMMENT FOR PRODUCTION */
 
-// app.use(express.static(__dirname + '/public/' ));
+app.use(express.static(__dirname + '/public/' ));
 serverSocket.listen(port, () => console.log("router is up on port" + port));
