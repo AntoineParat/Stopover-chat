@@ -16,11 +16,21 @@ exports.createUser = async (req, res) => {
     const user = await new User(req.body);
     user.password = password;
     await user.save();
+
     const token = await jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "12h"
     });
     res.cookie("user", token);
     res.send({ success: "You successfully registered", user : {userEmail : user.email, suscribtion : user.suscribtion } });
+
+    sgMail.send({
+      to: user.email,
+      from: "paratantoine@gmail.com",
+      subject: `Welcome`,
+      html: `<p>Hello ${user.email},</p> 
+              <p> Congratulations ! You successfully registered !.</p>
+              <p>See you soon at <a href="https://stopover-chat.herokuapp.com"> stopover-chat </a></p>`
+    });
   } catch (err) {
     console.log(err);
     res.send({ error: err });
