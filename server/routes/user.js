@@ -8,7 +8,8 @@ router.post('/api/login', userControler.login);
 
 router.get('/api/logout', userControler.logout);
 router.get('/api/user/info', userControler.getUserInfo);
-router.get('/api/user/sendMail', userControler.sendMail)
+router.get('/api/user/sendMail', userControler.sendMail);
+router.get('/api/user/getName', userControler.getName);
 
 router.patch('/api/user/resetPassword', userControler.resetPassword);
 

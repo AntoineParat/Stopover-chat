@@ -163,6 +163,18 @@ exports.sendMail = async (req, res) => {
   }
 };
 
+exports.getName = async (req, res) => {
+  try{
+    const decoded = await jwt.verify(req.query.token, process.env.JWT_SECRET);
+    if (decoded) {
+      res.send({success : "ok"})
+    }
+  } catch (err) {
+    res.send({error : "Reset link has expired."})
+    console.log(err)
+  }
+}
+
 exports.resetPassword = async (req, res) => {
   try {
     const decoded = await jwt.verify(req.body.user, process.env.JWT_SECRET);
