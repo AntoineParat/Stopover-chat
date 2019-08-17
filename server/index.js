@@ -1,6 +1,5 @@
 require("./mongoDB/mongoose");
 const express = require("express");
-const history = require("connect-history-api-fallback");
 const http = require("http");
 const roomRouter = require("./routes/room");
 const roomControl = require("./controler/roomControl");
@@ -168,8 +167,10 @@ io.on("connection", socket => {
   });
 });
 
-app.use(history());
+
 /* UNCOMMENT FOR PRODUCTION */
 
 app.use(express.static(__dirname + '/public/' ));
+app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'))
+
 serverSocket.listen(port, () => console.log("router is up on port" + port));
