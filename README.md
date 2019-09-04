@@ -30,7 +30,7 @@ This is a **MEVN** app using **Socket.IO** for live chat and **Stripe API** to h
  
  - A premium user can create an illimited number of chat rooms
  
-   > To become premium you have to subscribe a monthly billing.
+   > To become premium you have to subscribe a monthly billing (with one month free trial !).
   
  - [Stripe API](https://stripe.com/fr) is used to handle payment.
  
