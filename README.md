@@ -34,7 +34,7 @@ This is a **MEVN** app using **Socket.IO** for live chat and **Stripe API** to h
   
  - [Stripe API](https://stripe.com/fr) is used to handle payment.
  
-   > With a demo card number for the needs on this project.
+   > With a demo card number for the needs of this project.
    
   - Stripe **webhooks**
 
