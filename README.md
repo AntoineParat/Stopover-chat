@@ -81,6 +81,8 @@ This is a **MEVN** app using **Socket.IO** for live chat and **Stripe API** to h
 
   > RESTful API with Node and Express.
   
+- MVC Pattern
+  
 - Server Deployment
 
   > Deployed on Heroku.
